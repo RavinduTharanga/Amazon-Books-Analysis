@@ -233,13 +233,13 @@ if all_years:
     y_min, y_max = int(min(all_years)), int(max(all_years))
     year_range = st.sidebar.slider("Year range", y_min, y_max, (y_min, y_max))
 
-st.caption("Tip: On Streamlit Cloud, loading very large Parquet/CSV files at startup can crash the app. "
-           "This app loads big data only after you click the button.")
+# st.caption("Tip: On Streamlit Cloud, loading very large Parquet/CSV files at startup can crash the app. "
+#            "This app loads big data only after you click the button.")
 
 # -------------------------
 # Trend charts (fast)
 # -------------------------
-st.subheader("Global trends (from aggregated files)")
+# st.subheader("Global trends (from aggregated files)")
 
 c1, c2 = st.columns(2)
 i = 0
@@ -264,7 +264,7 @@ st.divider()
 # -------------------------
 # Big dataset (optional, on demand)
 # -------------------------
-st.subheader("Deep exploration (loads processed.parquet on demand)")
+# st.subheader("Deep exploration (loads processed.parquet on demand)")
 
 if not PROCESSED_PATH.exists():
     st.warning(f"`processed.parquet` not found at `{PROCESSED_PATH}`")
@@ -283,7 +283,7 @@ if is_lfs_pointer(PROCESSED_PATH):
 size_mb = PROCESSED_PATH.stat().st_size / (1024 * 1024)
 st.write(f"processed.parquet size: **{size_mb:,.1f} MB**")
 
-load_now = st.button("Load full dataset now (may take time / memory)")
+load_now = st.button("Load full dataset now may take time")
 
 if load_now:
     try:
