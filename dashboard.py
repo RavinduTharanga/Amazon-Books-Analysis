@@ -557,7 +557,8 @@ else:
         fig_line.update_yaxes(type="log", title="Number of Reviews (log)")
         fig_line.update_xaxes(title="Year")
         fig_line.update_layout(legend_title_text="Thematic Category", height=600)
-        st.plotly_chart(fig_line, use_container_width=True)
+        st.plotly_chart(fig_line, width="stretch")
+
 
     with tab2:
         st.subheader("Thematic Category Proportions per Year (stacked)")
@@ -579,7 +580,7 @@ else:
         fig_stack.update_yaxes(title="Proportion")
         fig_stack.update_xaxes(title="Year")
         fig_stack.update_layout(legend_title_text="Thematic Category", height=600)
-        st.plotly_chart(fig_stack, use_container_width=True)
+        st.plotly_chart(fig_line, width="stretch")
 
     with tab3:
         st.subheader("Counts Heatmap (Year × Thematic Category)")
@@ -589,4 +590,4 @@ else:
             labels=dict(x="Thematic Category", y="Year", color="Count"),
         )
         fig_heat.update_layout(height=650)
-        st.plotly_chart(fig_heat, use_container_width=True)
+        st.plotly_chart(fig_line, width="stretch")
