@@ -85,33 +85,33 @@
 #     if agg_reviews is not None:
 #         a = apply_year_filter(agg_reviews)
 #         fig = px.bar(a, x="year", y="review_count", title="Number of Reviews Per Year")
-#         st.plotly_chart(fig, use_container_width=True)
+#         st.plotly_chart(fig, width="stretch")   # same behavior as use_container_width=True
 
 #     if agg_textlen is not None:
 #         a = apply_year_filter(agg_textlen)
 #         fig = px.line(a, x="year", y="avg_text_len", markers=True, title="Average Review Length by Year")
-#         st.plotly_chart(fig, use_container_width=True)
+#         st.plotly_chart(fig, width="stretch")   # same behavior as use_container_width=True
 
 #     if agg_helpful is not None:
 #         a = apply_year_filter(agg_helpful)
 #         fig = px.line(a, x="year", y="avg_helpful_vote", markers=True, title="Average Helpful Votes by Year")
-#         st.plotly_chart(fig, use_container_width=True)
+#         st.plotly_chart(fig, width="stretch")   # same behavior as use_container_width=True
 
 # with col2:
 #     if agg_rating is not None:
 #         a = apply_year_filter(agg_rating)
 #         fig = px.line(a, x="year", y="avg_rating", markers=True, title="Average Rating Per Year")
-#         st.plotly_chart(fig, use_container_width=True)
+#         st.plotly_chart(fig, width="stretch")   # same behavior as use_container_width=True
 
 #     if agg_sent is not None:
 #         a = apply_year_filter(agg_sent)
 #         fig = px.line(a, x="year", y="avg_sentiment", markers=True, title="Average Sentiment Score Per Year")
-#         st.plotly_chart(fig, use_container_width=True)
+#         st.plotly_chart(fig, width="stretch")   # same behavior as use_container_width=True
 
 #     if agg_price is not None:
 #         a = apply_year_filter(agg_price)
 #         fig = px.line(a, x="year", y="avg_price", markers=True, title="Average Book Price (by Review Year)")
-#         st.plotly_chart(fig, use_container_width=True)
+#         st.plotly_chart(fig, width="stretch")   # same behavior as use_container_width=True
 
 # st.divider()
 
@@ -123,14 +123,14 @@
 #         grp = df_l3.groupby(["year", category_col]).size().rename("count").reset_index()
 #         fig = px.line(grp, x="year", y="count", color=category_col, markers=True,
 #                       title="Category Popularity Over Years (Top 10 in current filter)")
-#         st.plotly_chart(fig, use_container_width=True)
+#         st.plotly_chart(fig, width="stretch")   # same behavior as use_container_width=True
 
 # # Sentiment label trends (inside filtered set)
 # if "sentiment_label" in filtered.columns and len(filtered) > 0:
 #     grp = filtered.groupby(["year", "sentiment_label"]).size().rename("count").reset_index()
 #     fig = px.line(grp, x="year", y="count", color="sentiment_label", markers=True,
 #                   title="Sentiment Label Trends Over Years (filtered)")
-#     st.plotly_chart(fig, use_container_width=True)
+#     st.plotly_chart(fig, width="stretch")   # same behavior as use_container_width=True
 
 # # Top books / authors over years (optional)
 # if "title" in filtered.columns and len(filtered) > 0:
@@ -139,7 +139,7 @@
 #     grp = df_tb.groupby(["year", "title"]).size().rename("count").reset_index()
 #     fig = px.line(grp, x="year", y="count", color="title", markers=True,
 #                   title="Top 10 Books — Popularity Over the Years (filtered)")
-#     st.plotly_chart(fig, use_container_width=True)
+#     st.plotly_chart(fig, width="stretch")   # same behavior as use_container_width=True
 
 # if author_col and len(filtered) > 0:
 #     top_auth = filtered[author_col].value_counts().head(10).index.tolist()
@@ -147,7 +147,7 @@
 #     grp = df_ta.groupby(["year", author_col]).size().rename("count").reset_index()
 #     fig = px.line(grp, x="year", y="count", color=author_col, markers=True,
 #                   title="Top 10 Authors — Popularity Over the Years (filtered)")
-#     st.plotly_chart(fig, use_container_width=True)
+#     st.plotly_chart(fig, width="stretch")   # same behavior as use_container_width=True
 
 
 
@@ -378,33 +378,33 @@ with col1:
     if agg_reviews is not None:
         a = apply_year_filter(agg_reviews)
         fig = px.bar(a, x="year", y="review_count", title="Number of Reviews Per Year")
-        st.plotly_chart(fig, use_container_width=True)
+        st.plotly_chart(fig, width="stretch")   # same behavior as use_container_width=True
 
     if agg_textlen is not None:
         a = apply_year_filter(agg_textlen)
         fig = px.line(a, x="year", y="avg_text_len", markers=True, title="Average Review Length by Year")
-        st.plotly_chart(fig, use_container_width=True)
+        st.plotly_chart(fig, width="stretch")   # same behavior as use_container_width=True
 
     if agg_helpful is not None:
         a = apply_year_filter(agg_helpful)
         fig = px.line(a, x="year", y="avg_helpful_vote", markers=True, title="Average Helpful Votes by Year")
-        st.plotly_chart(fig, use_container_width=True)
+        st.plotly_chart(fig, width="stretch")   # same behavior as use_container_width=True
 
 with col2:
     if agg_rating is not None:
         a = apply_year_filter(agg_rating)
         fig = px.line(a, x="year", y="avg_rating", markers=True, title="Average Rating Per Year")
-        st.plotly_chart(fig, use_container_width=True)
+        st.plotly_chart(fig, width="stretch")   # same behavior as use_container_width=True
 
     if agg_sent is not None:
         a = apply_year_filter(agg_sent)
         fig = px.line(a, x="year", y="avg_sentiment", markers=True, title="Average Sentiment Score Per Year")
-        st.plotly_chart(fig, use_container_width=True)
+        st.plotly_chart(fig, width="stretch")   # same behavior as use_container_width=True
 
     if agg_price is not None:
         a = apply_year_filter(agg_price)
         fig = px.line(a, x="year", y="avg_price", markers=True, title="Average Book Price ")
-        st.plotly_chart(fig, use_container_width=True)
+        st.plotly_chart(fig, width="stretch")   # same behavior as use_container_width=True
 
 st.divider()
 
@@ -422,14 +422,14 @@ if category_col and len(df_for_category) > 0:
                 grp, x="year", y="count", color=category_col, markers=True,
                 title="Category Popularity Over Years (Top 10) "
             )
-            st.plotly_chart(fig, use_container_width=True)
+            st.plotly_chart(fig, width="stretch")   # same behavior as use_container_width=True
     else:
         grp = df_for_category.groupby(["year"]).size().rename("count").reset_index()
         fig = px.line(
             grp, x="year", y="count", markers=True,
             title=f"Category Popularity Over Years — {selected_cat} "
         )
-        st.plotly_chart(fig, use_container_width=True)
+        st.plotly_chart(fig, width="stretch")   # same behavior as use_container_width=True
 
 # =========================
 # Sentiment label trends
@@ -441,7 +441,7 @@ if "sentiment_label" in df_for_sentiment.columns and len(df_for_sentiment) > 0:
         grp, x="year", y="count", color="sentiment_label", markers=True,
         title="Sentiment Label Trends Over Years (Year only)"
     )
-    st.plotly_chart(fig, use_container_width=True)
+    st.plotly_chart(fig, width="stretch")   # same behavior as use_container_width=True
 
 # =========================
 # Top 10 Books — popularity over years
@@ -456,7 +456,7 @@ if "title" in df_for_books.columns and len(df_for_books) > 0:
             grp, x="year", y="count", color="title", markers=True,
             title="Top 10 Books — Popularity Over the Years"
         )
-        st.plotly_chart(fig, use_container_width=True)
+        st.plotly_chart(fig, width="stretch")   # same behavior as use_container_width=True
 
 # =========================
 # Top 10 Authors — popularity over years
@@ -472,14 +472,14 @@ if author_col and len(df_for_author) > 0:
                 grp, x="year", y="count", color=author_col, markers=True,
                 title="Top 10 Authors — Popularity Over the Years"
             )
-            st.plotly_chart(fig, use_container_width=True)
+            st.plotly_chart(fig, width="stretch")   # same behavior as use_container_width=True
     else:
         grp = df_for_author.groupby(["year"]).size().rename("count").reset_index()
         fig = px.line(
             grp, x="year", y="count", markers=True,
             title=f"Author Popularity Over the Years — {selected_author} "
         )
-        st.plotly_chart(fig, use_container_width=True)
+        st.plotly_chart(fig, width="stretch")   # same behavior as use_container_width=True
 
 st.divider()
 
