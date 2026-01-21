@@ -46,9 +46,10 @@ def s3_download_if_missing():
 
     s3 = boto3.client(
         "s3",
-        aws_access_key_id=st.secrets["AKIA6QPZ3XDDXQE7URGS"],
-        aws_secret_access_key=st.secrets["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"],
+        aws_access_key_id=st.secrets["AWS_ACCESS_KEY_ID"],
+        aws_secret_access_key=st.secrets["AWS_SECRET_ACCESS_KEY"],
         region_name=st.secrets.get("AWS_DEFAULT_REGION", "us-east-1"),
+
     )
 
     for fname in REQUIRED_FILES:
