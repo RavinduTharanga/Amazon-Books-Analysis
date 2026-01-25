@@ -5,4 +5,5 @@ streamlit
 kagglehub
 nltk
 boto3
+imghdr
 altair<5
