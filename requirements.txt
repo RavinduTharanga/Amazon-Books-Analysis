@@ -1,7 +1,7 @@
 pandas
 pyarrow
 plotly
-streamlit
+streamlit>=1.25
 kagglehub
 nltk
 boto3
